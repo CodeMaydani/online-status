@@ -11,15 +11,15 @@ export default function Root() {
         <p className="text-center text-3xl">Web Status Site</p>
         <p className="text-center">check status here</p>
         <div className="mt-32 space-y-4">
-          <Status link="Lebanon" name="Lebanon" status="operational" />
-          <Status link="Gaza" name="Gaza" status="unstable" />
-          <Status link="Else" name="Else" status="no-connection" />
-          <Status link="Moon" name="Moon" status="no-connection" />
-          <Status link="Moon" name="Moon" status="no-connection" />
-          <Status link="Moon" name="Moon" status="no-connection" />
-          <Status link="Moon" name="Moon" status="no-connection" />
-          <Status link="Moon" name="Moon" status="no-connection" />
-          <Status link="Moon" name="Moon" status="no-connection" />
+          <Status link="/log/Lebanon" name="Lebanon" status="operational" />
+          <Status link="/log/Gaza" name="Gaza" status="unstable" />
+          <Status link="/log/Else" name="Else" status="no-connection" />
+          <Status link="/log/Moon" name="Moon" status="no-connection" />
+          <Status link="/log/Moon" name="Moon" status="no-connection" />
+          <Status link="/log/Moon" name="Moon" status="no-connection" />
+          <Status link="/log/Moon" name="Moon" status="no-connection" />
+          <Status link="/log/Moon" name="Moon" status="no-connection" />
+          <Status link="/log/Moon" name="Moon" status="no-connection" />
         </div>
       </div>
     </div>

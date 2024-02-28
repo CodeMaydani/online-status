@@ -7,6 +7,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Status, statusIcons } from './Status';
+import { useNavigate } from 'react-router-dom';
 
 export interface ConnectionLog {
   logid: string;
@@ -15,39 +16,44 @@ export interface ConnectionLog {
 }
 
 interface ConnectionTableProps {
-  ConnectionLogs: ConnectionLog[];
+  data: (Record<string, any> & { status: Status })[];
+  headers: string[];
 }
 
-export function ConnectionTable({ ConnectionLogs }: ConnectionTableProps) {
+export function OperationInfoTable({ data, headers }: ConnectionTableProps) {
+  const navigation = useNavigate();
+
   return (
     <Table>
-      {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[200px]">Log Id</TableHead>
+          {headers.map((header) => (
+            <TableHead>{header}</TableHead>
+          ))}
+          {/* <TableHead className="w-[200px]">Log Id</TableHead>
           <TableHead>Time</TableHead>
-          <TableHead>Status</TableHead>
+          <TableHead>Status</TableHead> */}
           <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {ConnectionLogs.map((connectionLog) => (
-          <TableRow key={connectionLog.time}>
-            <TableCell className="font-medium">{connectionLog.logid}</TableCell>
+        {data.map((connectionLog) => (
+          <TableRow
+            onClick={() => navigation(`network/${connectionLog.logid}`)}
+            key={connectionLog.logid}
+          >
+            {Object.values(connectionLog).map((value) => (
+              <TableCell>{value}</TableCell>
+            ))}
+            {/* <TableCell className="font-medium">{connectionLog.logid}</TableCell>
             <TableCell>{connectionLog.time}</TableCell>
-            <TableCell>{connectionLog.status}</TableCell>
+            <TableCell>{connectionLog.status}</TableCell> */}
             <TableCell className="text-right">
               {statusIcons[connectionLog.status]}
             </TableCell>
           </TableRow>
         ))}
       </TableBody>
-      {/* <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter> */}
     </Table>
   );
 }

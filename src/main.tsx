@@ -5,7 +5,8 @@ import ErrorPage from './error-page';
 import Root from './routes/Root';
 import { ThemeProvider } from '@/components/theme-provider';
 import './index.css';
-import Connection, { loader as connectionLoader } from './routes/connection';
+import Logs, { loader as logsLoader } from './routes/logs';
+import Networks from './routes/networks';
 
 const router = createBrowserRouter([
   {
@@ -14,10 +15,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/:connection',
-    element: <Connection />,
+    path: 'log/:connection/',
+    element: <Logs />,
     errorElement: <ErrorPage />,
-    loader: connectionLoader,
+    loader: logsLoader,
+    children: [
+      {
+        path: 'network/:id',
+        element: <Networks />,
+      },
+    ],
   },
 ]);
 
