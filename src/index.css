@@ -71,9 +71,12 @@
 
 @layer base {
   * {
-    @apply font-Heebo border-border;
+    @apply border-border font-Heebo;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-radient-circle-b from-background to-foreground/10 text-foreground  dark:to-background/90;
+    /* @apply bg-gradient-to-b  from-background to-background/90 text-foreground; */
+    /* @apply bg-gradient-to-b  from-background to-background/90 text-foreground; */
+    /* @apply bg-background text-foreground; */
   }
 }

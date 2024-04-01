@@ -1,8 +1,7 @@
 import { Separator } from '@/components/ui/separator';
+import { Status } from '@/types/db.types';
 import { AlertCircle, CheckCircle2, XCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-export type Status = 'operational' | 'unstable' | 'no-connection';
 
 type StatusProps = {
   name: string;
@@ -16,7 +15,7 @@ export const statusIcons: Record<Status, JSX.Element> = {
   'no-connection': <XCircle className="text-red-400" />,
 };
 
-function Status({ name, status, link }: StatusProps) {
+function ConnectionStatus({ name, status, link }: StatusProps) {
   const Component = link ? Link : 'div';
 
   return (
@@ -36,4 +35,4 @@ function Status({ name, status, link }: StatusProps) {
   );
 }
 
-export default Status;
+export default ConnectionStatus;

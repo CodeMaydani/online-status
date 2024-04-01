@@ -1,8 +1,8 @@
 import AreaStatus from '@/components/AreaStatus';
 import { Separator } from '@/components/ui/separator';
-import { ConnectionType } from '@/routes/Root';
 import { useState } from 'react';
 import SearchInput from './SearchInput';
+import { ConnectionType } from '@/types/db.types';
 
 type ConnectionsSectionProps = {
   connections: ConnectionType[];

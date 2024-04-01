@@ -1,11 +1,11 @@
-import Status from '@/components/Status';
+import ConnectionStatus from '@/components/ConnectionStatus';
 
 function SocialNetwork() {
   return (
     <div className="space-y-4">
-      <Status name="Facebook" status="operational" />
-      <Status name="Twitter" status="unstable" />
-      <Status name="Youtube" status="operational" />
+      <ConnectionStatus name="Facebook" status="operational" />
+      <ConnectionStatus name="Twitter" status="unstable" />
+      <ConnectionStatus name="Youtube" status="operational" />
     </div>
   );
 }

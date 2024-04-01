@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: 'log/:connection/',
+    path: 'logs/:connection/',
     element: <Logs />,
     errorElement: <ErrorPage />,
     loader: logsLoader,

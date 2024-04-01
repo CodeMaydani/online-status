@@ -6,8 +6,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Status, statusIcons } from './Status';
+import { statusIcons } from './ConnectionStatus';
 import { useNavigate } from 'react-router-dom';
+import { Status } from '@/types/db.types';
 
 export interface ConnectionLog {
   logid: string;
